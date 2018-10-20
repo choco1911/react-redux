@@ -1,17 +1,15 @@
 import {createStore} from 'redux'
+import counterReducer from '../reducers/counter'
+import issuesReducer from '../reducers/issues'
 
 function reducer(state, action) {
-    switch(action.type) {
-    case 'INCREASE_COUNTER':
-        return {...state, ...{counter: (state.counter + 1)}}
-    case 'RESET_COUNTER':
-        return {...state, ...{counter: 0}}
-    case 'LOAD_ISSUES':
-        return {...state, ...{issues: action.payload}}
-    default:
-        return state
+    return {
+        repository: state.repository,
+        counter: counterReducer(state.counter, action),
+        issues: issuesReducer(state.issues, action)
     }
 }
+
 
 const store = createStore(reducer, {
     issues: [],
