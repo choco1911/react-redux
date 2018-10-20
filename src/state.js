@@ -1,15 +1,11 @@
-import {createStore} from 'redux'
+import {createStore, combineReducers} from 'redux'
 import counterReducer from '../reducers/counter'
 import issuesReducer from '../reducers/issues'
 
-function reducer(state, action) {
-    return {
-        repository: state.repository,
-        counter: counterReducer(state.counter, action),
-        issues: issuesReducer(state.issues, action)
-    }
-}
-
+const reducer = combineReducers({
+        counter: counterReducer,
+        issues: issuesReducer
+})
 
 const store = createStore(reducer, {
     issues: [],
