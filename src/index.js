@@ -14,27 +14,27 @@ render(<App /> , document.getElementById('cntnr'))
 
 store.subscribe(() =>  console.log('New state', store.getState()))
 
-console.log('increase')
+console.log('[increase]')
 store.dispatch({
     type: 'INCREASE_COUNTER'
 })
 
-console.log('increase')
+console.log('[increase]')
 store.dispatch({
     type: 'INCREASE_COUNTER'
 })
 
-console.log('reset')
+console.log('[reset]')
 store.dispatch({
     type: 'RESET_COUNTER'
 })
 
-console.log('uknown')
+console.log('[uknown]')
 store.dispatch({
     type: 'UNKNOWN'
 })
 
-console.log('issue')
+console.log('[issue]')
 store.dispatch({
     type: 'LOAD_ISSUES',
     payload: [{id: 1, name: 'First issue'}, {id: 2, name: 'Second issue'}]
