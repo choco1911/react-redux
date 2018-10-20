@@ -33,3 +33,9 @@ console.log('uknown')
 store.dispatch({
     type: 'UNKNOWN'
 })
+
+console.log('issue')
+store.dispatch({
+    type: 'LOAD_ISSUES',
+    payload: [{id: 1, name: 'First issue'}, {id: 2, name: 'Second issue'}]
+})
