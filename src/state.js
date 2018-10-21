@@ -4,8 +4,9 @@ import * as reducers from './reducers'
 import counterReducer from '../reducers/counter'
 import issuesReducer from '../reducers/issues'
 */
-
+/*
 console.log('[It\' Reducer Object]', reducers)
+*/
 
 const reducer = combineReducers(reducers)
 
